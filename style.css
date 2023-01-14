@@ -23,15 +23,15 @@ h1 {
     color: #75B79E;
   }
 
-  .containerPrincipal{
+.containerPrincipal{
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-  }
+}
 
-  .card{
+.card{
     width: 117px;
     height: 146px;
     background: #A7E9AF;
@@ -41,17 +41,17 @@ h1 {
     border: 1px solid #99CEA8;
     border-radius: 5px;
     margin: 10px 10px;
-  }
+}
 
-  img{
+img{
     width: 100px;
     height: 100px;
     display: flex;
     align-items: center;
     box-sizing: border-box;
-  }
+}
 
-  @media (max-width: 335px) {
+@media (max-width: 335px) {
     h1{
         display: flex;
         align-items: center;
@@ -63,9 +63,9 @@ h1 {
         font-size: 36px;
         font-weight: 700;
         color: #75B79E;
-    }
+}
 
-    .containerPrincipal{
+.containerPrincipal{
         width: 100%;
         height: 100%;
         display: flex;
@@ -73,9 +73,10 @@ h1 {
         align-items: center;
         flex-wrap: wrap;
         flex-direction: column;
-    }
   }
+}
 
-  .escondido{
+.escondido{
     display: none;
-  }
+ }
+  

@@ -3,7 +3,9 @@ let verificador = 1;
 let cont = 0;
 const baralhoPronto = [];
 const baralho = document.querySelectorAll('.card.tres, .card.um, .card.quatro, .card.dois, .card.sete, .card.cinco, .card.seis');
-const baralho2 = document.querySelectorAll('.card.um');
+const baralho1 = document.querySelectorAll('.card.um');
+const baralho2 = document.querySelectorAll('.card.dois');
+const baralhoo = baralho1 + baralho2;
 
 
 while(verificador != 0){
@@ -33,6 +35,17 @@ function puzzle(){
         baralhoPronto[i].classList.remove('escondido');
         //cont++;
     }
+}
+
+function viraCard(recebe){
+    const cartaViradaGif = recebe.querySelector('.escondido');
+    console.log(cartaViradaGif);
+    cartaViradaGif.classList.remove('escondido');
+    console.log(recebe);
+    const cartaVirada = recebe.querySelector('.atras');
+    console.log(cartaVirada);
+    cartaVirada.classList.add('escondido');
+    
 }
 
 nodetoarr();
