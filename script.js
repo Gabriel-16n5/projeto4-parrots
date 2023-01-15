@@ -1,4 +1,5 @@
-let qtdCard = prompt("Quantas cartas quer jogar?(de 4 a 14 APENAS)");
+let qtdCard = parseInt(prompt("Quantas cartas quer jogar?(de 4 a 14 APENAS)"));
+
 let verificador = 1;
 let cont = 0;
 const baralhoPronto = [];
@@ -12,6 +13,8 @@ let ultimaCarta1 = [];
 let ultimaCarta2 = [];
 let armaze = 0;
 let oi = 0;
+let qtdDeJogadas = 0;
+let fimDoJogo = 0;
 
 while(verificador != 0){
     if((qtdCard < 4) || (qtdCard >14) || (qtdCard%2!=0)){
@@ -43,9 +46,9 @@ function puzzle(){
 }
 
 function viraCard(recebe, recebeClass){
+    qtdDeJogadas++;
     if(qualcarta === recebeClass){
         verifi = 0;
-        alert('MermaCarta')
         //qualcarta = recebeClass;
         const cartaViradaGif = recebe.querySelector('.escondido');
         console.log(cartaViradaGif);
@@ -56,6 +59,8 @@ function viraCard(recebe, recebeClass){
         cartaVirada.classList.add('escondido');
         oi++;
         armaze++;
+        fimDoJogo = fimDoJogo + 2;
+        setTimeout(resultado, 1000);
     } else{
         qualcarta = recebeClass;
         ultimaCarta1[armaze] = recebe.querySelector('.escondido');
@@ -93,7 +98,11 @@ function Espera(){
     qualcarta = '';
 }
 
-
+function resultado(){
+if(fimDoJogo == qtdCard){
+    alert('Você ganhou em ' + qtdDeJogadas + ' jogadas!');
+    }
+}
 
 nodetoarr();
 baralhoPronto.sort(comparador);
