@@ -1,5 +1,5 @@
 let qtdCard = parseInt(prompt("Quantas cartas quer jogar?(de 4 a 14 APENAS)"));
-
+const meuInterval = setInterval(cronometro, 1000);
 let verificador = 1;
 let cont = 0;
 const baralhoPronto = [];
@@ -15,6 +15,7 @@ let armaze = 0;
 let oi = 0;
 let qtdDeJogadas = 0;
 let fimDoJogo = 0;
+let num = 1;
 
 while(verificador != 0){
     if((qtdCard < 4) || (qtdCard >14) || (qtdCard%2!=0)){
@@ -100,7 +101,22 @@ function Espera(){
 
 function resultado(){
 if(fimDoJogo == qtdCard){
-    alert('Você ganhou em ' + qtdDeJogadas + ' jogadas!');
+    clearInterval(meuInterval);
+    alert('Você ganhou em ' + qtdDeJogadas + ' jogadas! ' + 'A duração do jogo foi de ' + num + ' segundos!');
+    jogarNovamente();
+    }
+}
+
+function cronometro(){
+    let temporizador = document.querySelector('.segundos');
+    temporizador.innerHTML = num;
+    num++;
+}
+
+function jogarNovamente(){
+   let op = prompt('Gostaria de jogar novamente? escreva = "sim ou não"');
+    if(op == 'sim'){
+        location.reload()
     }
 }
 
