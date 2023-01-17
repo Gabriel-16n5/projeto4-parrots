@@ -117,6 +117,11 @@ function jogarNovamente(){
    let op = prompt('Gostaria de jogar novamente? escreva = "sim ou não"');
     if(op == 'sim'){
         location.reload()
+    } else if(op == 'não') {
+        alert('Obrigado por jogar!!!');
+    } else{
+        alert('Opção inválida');
+        jogarNovamente();
     }
 }
 
